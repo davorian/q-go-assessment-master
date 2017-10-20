@@ -1,0 +1,7 @@
+.incomplete {
+  display: none;
+}
+
+.complete {
+  display: list-item;
+}

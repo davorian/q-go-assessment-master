@@ -1,0 +1,14 @@
+.item-completed-toggle {
+  margin-top: 20px;
+}
+
+.itemCreator-input {
+  height: 30px;
+  width: 300px;
+}
+
+.completed-item-button-toggle {
+  height: 30px;
+  width: 100px;
+  margin-left: 10px;
+}
