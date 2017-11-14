@@ -27,11 +27,10 @@ const reducer = (state = initialState, action) => {
       };
 
     case DELETE_ITEM:
-      const removeIndex = state.items.map(function(item) { return item.id; }).indexOf(action.content.id);
-      state.items.splice(removeIndex, 1);
+      const itemsWithoutDeletedItem = state.items.filter(item => item.id !== action.content.id);
       return {
         ...state,
-        items: state.items.slice(0,state.items.length)
+        items: itemsWithoutDeletedItem
       };
 
     case TOGGLE_ITEM:
@@ -42,10 +41,10 @@ const reducer = (state = initialState, action) => {
       };
 
       const toggleIndex = state.items.map(function(item) { return item.id; }).indexOf(action.content.id);
-      state.items.splice(toggleIndex, 1, toggledItem);
+      const itemsWithoutToggledItem = state.items.filter(item => item.id !== action.content.id);
       return {
         ...state,
-        items: state.items.slice(0,state.items.length)
+        items: itemsWithoutToggledItem.splice(toggleIndex, 1, toggledItem)
       };
 
     case TOGGLE_COMPLETED_VISIBILITY:
